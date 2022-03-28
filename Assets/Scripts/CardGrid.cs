@@ -24,6 +24,8 @@ public class CardGrid : MonoBehaviour
     
     private void Awake()
     {
+        if (playerPos.x >= width || playerPos.y >= height || playerPos.x < 0 || playerPos.y < 0)
+            throw new Exception("Player outside grid, change playerPos and restart game");
         CreateGrid();
     }
     

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCard : Card
@@ -12,7 +13,6 @@ public class PlayerCard : Card
             hpText.text = hp.ToString();
             if (hp <= 0)
             {
-                GameManager.Instance.GameOver();
                 Destroy();
             }
         }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-
     public int ScoreValue
     {
         get => score;
@@ -14,6 +13,7 @@ public class Score : MonoBehaviour
             if (text != null)
                 text.text = "Score: " + score.ToString();
             ScoreChanged?.Invoke(score);
+            GameManager.Instance.score = score;
         }
     }
     

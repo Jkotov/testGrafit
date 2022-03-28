@@ -17,7 +17,7 @@ public abstract class Card : MonoBehaviour
 
     private protected int hp;
     [SerializeField] private protected TextMeshPro hpText;
-    [SerializeField] private float cardAnimationTime;
+    [SerializeField] private protected float cardAnimationTime;
     [SerializeField] private Vector3 minScale;
     private Vector3 maxScale;
 
