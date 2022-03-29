@@ -26,7 +26,6 @@ public class GameManager
     public void GameOver()
     {
         IsGameOver = true;
-        GameStats.Instance.SaveRecord();
         Debug.Log("GameOver");
         LoadGameOverSceneWithTimeout(msBeforeGameOverSceneLoad);
     }
@@ -34,6 +33,7 @@ public class GameManager
     private async void LoadGameOverSceneWithTimeout(int timeout)
     {
         await Task.Delay(timeout);
+        GameStats.Instance.SaveRecord();
         SceneManager.LoadScene("GameOver");
     }
 }
