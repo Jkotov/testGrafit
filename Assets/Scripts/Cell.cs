@@ -13,6 +13,7 @@ public class Cell : MonoBehaviour
     {
         set => grid ??= value;
     }
+    
     public Vector2Int Pos
     {
         get => pos.GetValueOrDefault();

@@ -78,17 +78,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7296653277542061754, guid: 17b25500768561c398abbfd9f49327fc, type: 3}
   m_PrefabInstance: {fileID: 3871994701437514085}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6836494606323140701 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7736072781361805624, guid: 17b25500768561c398abbfd9f49327fc, type: 3}
+--- !u!1 &2697536878066485119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1212459874949789210, guid: 17b25500768561c398abbfd9f49327fc, type: 3}
   m_PrefabInstance: {fileID: 3871994701437514085}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6140948158108190904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d4c282060f43fbad6180b74806165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpText: {fileID: 6836494606323140701}
   cardAnimationTime: 0.5
   minScale: {x: 0.05, y: 0.05, z: 0.05}
+  textBox: {fileID: 2697536878066485119}

@@ -11,7 +11,8 @@ public class CardGrid : MonoBehaviour
     [SerializeField] private GameObject cell;
     [SerializeField] private Vector2Int playerPos;
     [SerializeField] private CardSpawner cardSpawner;
-    [SerializeField] private Score score;
+    private PlayerCard player;
+    
     private bool CanPlayerMove(Vector2Int pos) => Math.Abs(pos.x - playerPos.x) + Math.Abs(pos.y - playerPos.y) == 1 &&
                                                   !GameManager.Instance.IsGameOver;
     
@@ -22,7 +23,7 @@ public class CardGrid : MonoBehaviour
         MovePlayerCard(pos);
     }
     
-    private void Awake()
+    private void Start()
     {
         if (playerPos.x >= width || playerPos.y >= height || playerPos.x < 0 || playerPos.y < 0)
             throw new Exception("Player outside grid, change playerPos and restart game");
@@ -44,7 +45,9 @@ public class CardGrid : MonoBehaviour
                 if (cells[i, j].Pos != playerPos)
                     SpawnHpCard(cells[i, j].Pos);
                 else
-                    cardSpawner.SpawnPlayerCard(this, cells[i, j].Pos);
+                {
+                    player = cardSpawner.SpawnPlayerCard(this, cells[i, j].Pos);
+                }
                 cells[i, j].Grid = this;
             }
         }
@@ -52,7 +55,7 @@ public class CardGrid : MonoBehaviour
 
     private void SpawnHpCard(Vector2Int pos)
     {
-        cardSpawner.SpawnHpCard(this, pos);
+        cardSpawner.SpawnEffectCard(this, pos);
     }
 
     private void DestroyCard(Vector2Int pos)
@@ -62,10 +65,11 @@ public class CardGrid : MonoBehaviour
 
     private void MovePlayerCard(Vector2Int pos)
     {
-        cells[playerPos.x, playerPos.y].Card.Hp += cells[pos.x, pos.y].Card.Hp;
+        var effectOnPlayer = cells[pos.x, pos.y].Card.GetComponent<IEffectOnPlayer>();
+        effectOnPlayer?.Effect(ref player);
         MoveCard(playerPos, pos);
         playerPos = pos;
-        score.ScoreValue++;
+        GameStats.Instance.AddScore();
     }
 
     private void MoveCard(Vector2Int pos, Vector2Int newPos)

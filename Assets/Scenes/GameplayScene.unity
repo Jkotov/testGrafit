@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 675517268}
   - component: {fileID: 675517267}
   - component: {fileID: 675517266}
+  - component: {fileID: 675517269}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -297,7 +298,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 675517264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0a7d4ae8043466f92bd38b23ee8f302, type: 3}
+  m_Script: {fileID: 11500000, guid: a670606f89f1a4608b265d1a46c68b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &675517267
@@ -397,6 +398,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675517264}
   m_CullTransparentMesh: 1
+--- !u!114 &675517269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675517264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9e62975aaf44c6928511a2d748c31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &784824481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784824483}
+  - component: {fileID: 784824482}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &784824482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784824481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb98e364c26f93aa3b7f738329a33983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelOnStart: 1
+  scoreForLevel: 10
+  secondsBeforeGameOverSceneLoad: 2
+--- !u!4 &784824483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784824481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.012522042, y: 0.01255648, z: -6.84866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785831433
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +506,6 @@ MonoBehaviour:
   cell: {fileID: 923546091132758741, guid: 928eaa0cd357a7f81a94204708aff223, type: 3}
   playerPos: {x: 1, y: 1}
   cardSpawner: {fileID: 828197971}
-  score: {fileID: 675517266}
 --- !u!1 &828197970
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +538,6 @@ MonoBehaviour:
   healCardPool: {fileID: 1365548758}
   damageCardPool: {fileID: 193222371}
   playerCardPrefab: {fileID: 467588834264703456, guid: 18cd986875ae7953fa0b4151d8dca3d4, type: 3}
-  difficultyLevel: {fileID: 1725312893}
   damageCardChancePerDifficultyLevel: 0.1
   maxDamageCardChance: 0.5
 --- !u!4 &828197972
@@ -621,6 +678,7 @@ GameObject:
   - component: {fileID: 1725312895}
   - component: {fileID: 1725312894}
   - component: {fileID: 1725312893}
+  - component: {fileID: 1725312896}
   m_Layer: 5
   m_Name: DifficultyLevel
   m_TagString: Untagged
@@ -659,9 +717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea743886aa724c9399378dbfb9d66957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 675517266}
-  levelOnStart: 1
-  scoreForLevel: 10
 --- !u!114 &1725312894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +814,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725312891}
   m_CullTransparentMesh: 1
+--- !u!114 &1725312896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725312891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9e62975aaf44c6928511a2d748c31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2018292400
 GameObject:
   m_ObjectHideFlags: 0

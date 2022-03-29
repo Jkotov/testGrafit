@@ -1,31 +1,23 @@
 using System.Collections;
 using DG.Tweening;
 using TMPro;
+using UI;
 using UnityEngine;
 
 public abstract class Card : MonoBehaviour
 {
-    public virtual int Hp
-    {
-        get => hp;
-        set
-        {
-            hp = value;
-            hpText.text = hp.ToString();
-        }
-    }
-
-    private protected int hp;
-    [SerializeField] private protected TextMeshPro hpText;
     [SerializeField] private protected float cardAnimationTime;
     [SerializeField] private Vector3 minScale;
+    [SerializeField] private GameObject textBox;
+    private protected ITextVisualizer textVisualizer;
     private Vector3 maxScale;
-
+    
     private protected virtual void Awake()
     {
+        textVisualizer = textBox.GetComponent<ITextVisualizer>();
         maxScale = transform.localScale;
     }
-
+    
     public void MoveAnimation(Vector3 pos)
     {
         transform.DOMove(pos, cardAnimationTime);

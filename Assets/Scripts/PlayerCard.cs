@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerCard : Card
 {
-    public override int Hp
+    public int Hp
     {
         get => hp;
         set
         {
             hp = value;
-            hpText.text = hp.ToString();
+            textVisualizer?.UpdateText(hp.ToString());
             if (hp <= 0)
             {
                 Destroy();
@@ -18,12 +18,11 @@ public class PlayerCard : Card
         }
     }
 
-    [SerializeField] private protected new int hp;
+    [SerializeField] private int hp;
 
-    private protected override void Awake()
+    private void Start()
     {
-        base.Awake();
-        hpText.text = hp.ToString();
+        textVisualizer?.UpdateText(hp.ToString());
     }
 
     public override void Destroy()

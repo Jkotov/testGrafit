@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpChangeCardPool : MonoBehaviour
+public class EffectCardPool : MonoBehaviour
 {
     [SerializeField] private GameObject cardPrefab;
-    private readonly List<HpChangeCard> cards = new List<HpChangeCard>();
+    private readonly List<EffectCard> cards = new List<EffectCard>();
 
-    public HpChangeCard GetCard()
+    public EffectCard GetCard()
     {
         foreach (var card in cards)
         {
@@ -17,7 +17,7 @@ public class HpChangeCardPool : MonoBehaviour
             }
         }
 
-        var tmp = Instantiate(cardPrefab).GetComponent<HpChangeCard>();
+        var tmp = Instantiate(cardPrefab, transform).GetComponent<EffectCard>();
         cards.Add(tmp);
         return tmp;
     }
